@@ -8,7 +8,7 @@ import dj_email_url
 from django.contrib.messages import constants as messages
 import django_cache_url
 
-DEBUG = False
+DEBUG = ast.literal_eval(os.environ.get('DEBUG', 'True'))
 
 SITE_ID = 1
 
@@ -33,7 +33,7 @@ if os.environ.get('REDIS_URL'):
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://sepcrufagevcxg:2d259d9fd1000a5c68f6793bbf0ef809ddf8ad56840a1154c8a5102157082ded@ec2-54-163-227-202.compute-1.amazonaws.com:5432/dcja3fkl4kb6jc',
+        default='postgres://postgres:michelle@localhost:5433/saleor',
         conn_max_age=600),
 }
 
@@ -135,7 +135,7 @@ MIDDLEWARE_CLASSES = [
     'saleor.core.middleware.CountryMiddleware',
     'saleor.core.middleware.CurrencyMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
-
+   
 
 ]
 
