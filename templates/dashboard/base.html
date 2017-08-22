@@ -7,7 +7,7 @@
   <head>
     <title>
       {% block title %}
-        {% trans "Dashboard - Saleor" context "Dashboard default page title" %}
+        {% trans "Dashboard - Tamarilo" context "Dashboard default page title" %}
       {% endblock %}
     </title>
     {% block meta %}
@@ -37,9 +37,7 @@
                 <a href="/" target="_blank" class="waves-effect waves-teal">
                   {% trans "Visit storefront" context "Dashboard top navigation action" %}
                 </a>
-                <a href="{% url "dashboard:styleguide" %}" target="_blank" class="waves-effect waves-teal">
-                  {% trans "Style guide" context "Dashboard top navigation action" %}
-                </a>
+
               </li>
               <li>
                 <a href="{% url 'account_logout' %}" class="waves-effect waves-teal">
@@ -62,11 +60,7 @@
                 <svg data-src="{% static "dashboard/images/mobile_menu.svg" %}" width="24" height="24" />
               </a>
             </li>
-            <li>
-              <a href="{% url 'dashboard:index' %}" class="logo">
-                <svg data-src="{% static "dashboard/images/saleor_logo.svg" %}" height="38px" width="176px" />
-              </a>
-            </li>
+
             <li class="search">
               {% if SEARCH_IS_ENABLED %}
                 <form method="get" action="{% url "dashboard:search" %}" class="hide-on-small-only">
@@ -101,11 +95,11 @@
                     {% trans "Categories" context "Dashboard categories list" %}
                   </a>
                 </li>
-                <li class="{% block menu_location_class %}{% endblock %}">
+                <!--<li class="{% block menu_location_class %}{% endblock %}">
                   <a href="{% url 'dashboard:product-stock-location-list' %}">
                   {% trans "Stock locations" context "Dashboard stock loactions list" %}
                   </a>
-                </li>
+                </li>,-->
               </ul>
             </li>
             <li class="side-nav-section">
@@ -142,7 +136,7 @@
                 </li>
               </ul>
             </li>
-            <li class="side-nav-section">
+            <!--<li class="side-nav-section">
               <p>
                 {% trans "Configuration"  context "Dashboard configuration" %}
               </p>
@@ -175,7 +169,7 @@
                   {% trans "Release:" context "Dashboard software version" %} {% version %}
                 </p>
               </li>
-            {% endif %}
+            {% endif %}-->
           </ul>
         </div>
       </nav>

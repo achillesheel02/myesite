@@ -8,7 +8,6 @@ import dj_email_url
 from django.contrib.messages import constants as messages
 import django_cache_url
 
-
 DEBUG = ast.literal_eval(os.environ.get('DEBUG', 'True'))
 
 SITE_ID = 1
@@ -20,7 +19,7 @@ ROOT_URLCONF = 'saleor.urls'
 WSGI_APPLICATION = 'saleor.wsgi.application'
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Barak', 'bachillah@gmail.com'),
 )
 MANAGERS = ADMINS
 INTERNAL_IPS = os.environ.get('INTERNAL_IPS', '127.0.0.1').split()
@@ -34,11 +33,12 @@ if os.environ.get('REDIS_URL'):
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://saleor:saleor@localhost:5432/saleor',
-        conn_max_age=600)}
+        default='postgres://postgres:michelle@localhost:5433/saleor',
+        conn_max_age=600),
+}
 
 
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Africa/Nairobi'
 LANGUAGE_CODE = 'en-us'
 LOCALE_PATHS = [os.path.join(PROJECT_ROOT, 'locale')]
 USE_I18N = True
@@ -120,7 +120,7 @@ TEMPLATES = [{
         'string_if_invalid': '<< MISSING VARIABLE "%s" >>' if DEBUG else ''}}]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6(&^%*):Nuo;l')
 
 MIDDLEWARE_CLASSES = [
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -135,6 +135,8 @@ MIDDLEWARE_CLASSES = [
     'saleor.core.middleware.CountryMiddleware',
     'saleor.core.middleware.CurrencyMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+
+
 ]
 
 INSTALLED_APPS = [
@@ -234,8 +236,8 @@ AUTH_USER_MODEL = 'userprofile.User'
 
 LOGIN_URL = '/account/login/'
 
-DEFAULT_COUNTRY = 'US'
-DEFAULT_CURRENCY = 'USD'
+DEFAULT_COUNTRY = 'KE'
+DEFAULT_CURRENCY = 'KSH'
 AVAILABLE_CURRENCIES = [DEFAULT_CURRENCY]
 
 OPENEXCHANGERATES_API_KEY = os.environ.get('OPENEXCHANGERATES_API_KEY')
@@ -262,7 +264,8 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 CHECKOUT_PAYMENT_CHOICES = [
-    ('default', 'Dummy provider')]
+    ('default', 'Cash/MPESA On Delivery/Collection'),
+    ]
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'}
@@ -283,7 +286,8 @@ BOOTSTRAP3 = {
 
 TEST_RUNNER = ''
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split()
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1').split()
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 

@@ -45,7 +45,7 @@ idna==2.2                 # via cryptography
 iso8601==0.1.11           # via graphene-django
 jmespath==0.9.0           # via boto3, botocore
 jsonfield==1.0.3
-lxml==3.7.2               # via premailer
+#lxml==3.7.2               # via premailer
 markdown==2.6.7
 maxminddb-geolite2==2015.708
 maxminddb==1.2.3
@@ -82,7 +82,7 @@ suds-jurko==0.6           # via django-payments
 text-unidecode==1.0
 typing==3.5.2.2           # via promise
 urllib3==1.19.1           # via elasticsearch
-uwsgi==2.0.14
+#uwsgi==2.0.14
 xmltodict==0.10.2         # via django-payments
 
 # The following packages are considered to be unsafe in a requirements file:

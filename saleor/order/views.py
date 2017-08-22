@@ -94,12 +94,15 @@ def start_payment(request, order, variant):
     if variant not in [code for code, dummy_name in variant_choices]:
         raise Http404('%r is not a valid payment variant' % (variant,))
     with transaction.atomic():
-        order.change_status(OrderStatus.PAYMENT_PENDING)
+        order.change_status(OrderStatus.FULLY_PAID)
         payment, dummy_created = Payment.objects.get_or_create(
             variant=variant, status=PaymentStatus.WAITING, order=order,
             defaults=defaults)
+        payment.status=PaymentStatus.PREAUTH
+        payment.capture(total[0])
         try:
             form = payment.get_form(data=request.POST or None)
+
         except RedirectNeeded as redirect_to:
             return redirect(str(redirect_to))
         except Exception:

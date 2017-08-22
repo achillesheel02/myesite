@@ -36,9 +36,12 @@
         <div class="col-lg-10 offset-lg-1">
             <h2 class="order-details__header">
                 {% blocktrans trimmed with order_status=order.get_status_display context "Order detail text" %}
-                    Order {{ order }}: {{ order_status }}
+                    Order {{ order }}: {{ order_status }} : (Cash or MPESA to be processed on delivery/collection)
                 {% endblocktrans %}
             </h2>
+        <p>{%  blocktrans trimmed context "Payment pending text" %}
+                                    Your order has been placed. You will receive an email showing confirmation shortly. Afterwards, you shall receive a call, detailing shipping.
+                                {% endblocktrans %}</p>
             {% if not order.is_fully_paid %}
                 {% if order.is_pre_authorized %}
                     <a href="{% url "order:payment" token=order.token %}" class="btn btn-link">
