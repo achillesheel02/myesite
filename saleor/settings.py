@@ -33,7 +33,7 @@ if os.environ.get('REDIS_URL'):
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://postgres:michelle@localhost:5433/saleor',
+        default='postgres://sepcrufagevcxg:2d259d9fd1000a5c68f6793bbf0ef809ddf8ad56840a1154c8a5102157082ded@ec2-54-163-227-202.compute-1.amazonaws.com:5432/dcja3fkl4kb6jc',
         conn_max_age=600),
 }
 
