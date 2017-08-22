@@ -50,7 +50,7 @@ enum34==1.1.6
 factory-boy==2.9.2
 Faker==0.7.7
 funcsigs==1.0.2
-functools32==3.2.3.post2
+
 futures==3.1.1
 google-i18n-address==2.0.1
 google-measurement-protocol==0.1.6
@@ -113,3 +113,4 @@ Unidecode==0.4.21
 urllib3==1.19.1
 websocket-client==0.44.0
 xmltodict==0.10.2
+setuptools
