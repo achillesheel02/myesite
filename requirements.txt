@@ -86,7 +86,7 @@ pycountry==17.5.14
 pycparser==2.17
 PyJWT==1.4.2
 pyparsing==2.1.10
-pypiwin32==219
+
 pysolr==3.6.0
 pytest==3.0.5
 pytest-django==3.1.2
