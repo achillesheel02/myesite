@@ -4,6 +4,7 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
+python3-openid==3.1.0
 appdirs==1.4.0            # via setuptools
 babel==2.3.4
 babeldjango==0.2.2
