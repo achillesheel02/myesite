@@ -67,6 +67,7 @@ pyparsing==2.1.10         # via packaging
 pytest-django==3.1.2
 pytest==3.0.5
 python-dateutil==2.6.0    # via botocore, faker
+python3-openid==3.1.0
 pytz==2016.10             # via babel
 redis==2.10.5             # via django-redis
 requests-oauthlib==0.7.0  # via social-auth-core
@@ -84,6 +85,6 @@ typing==3.5.2.2           # via promise
 urllib3==1.19.1           # via elasticsearch
 #uwsgi==2.0.14
 xmltodict==0.10.2         # via django-payments
-python3-openid
+
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools                # via cryptography
