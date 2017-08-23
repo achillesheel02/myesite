@@ -293,19 +293,7 @@ ALLOWED_HOSTS = ['stormy-waters-49099.herokuapp.com']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Amazon S3 configuration
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-AWS_MEDIA_BUCKET_NAME = os.environ.get('AWS_MEDIA_BUCKET_NAME')
-AWS_QUERYSTRING_AUTH = ast.literal_eval(
-    os.environ.get('AWS_QUERYSTRING_AUTH', 'False'))
 
-if AWS_STORAGE_BUCKET_NAME:
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-if AWS_MEDIA_BUCKET_NAME:
-    DEFAULT_FILE_STORAGE = 'saleor.core.storages.S3MediaStorage'
-    THUMBNAIL_DEFAULT_STORAGE = DEFAULT_FILE_STORAGE
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
@@ -344,7 +332,7 @@ WEBPACK_LOADER = {
             r'.+\.hot-update\.js',
             r'.+\.map']}}
 
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGOUT_ON_PASSWORD_CHANGE = False
 
 
