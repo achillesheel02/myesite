@@ -8,7 +8,7 @@ import dj_email_url
 from django.contrib.messages import constants as messages
 import django_cache_url
 
-DEBUG = ''
+DEBUG = 'True'
 
 SITE_ID = 1
 
